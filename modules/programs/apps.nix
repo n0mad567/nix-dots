@@ -1,0 +1,32 @@
+{ pkgs, inputs, ... }:
+
+{
+  environment.systemPackages = with pkgs; [
+    #core utils
+    git
+    wget
+    vim
+    blueman
+    playerctl
+    brightnessctl
+    wlogout
+
+    #system apps / deps
+    kitty
+    rofi
+    waybar
+    hyprpicker
+    pywal
+    awww
+    bibata-cursors
+    nautilus
+    pavucontrol
+    
+    #user apps
+    discord
+    
+  ]
+  ++ [
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+  ];
+}
