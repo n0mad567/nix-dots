@@ -4,7 +4,7 @@
         "reload_style_on_change": true,
         "modules-left": ["custom/apps","clock","tray"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["group/expand","pulseaudio","network","battery"],
+        "modules-right": ["group/expand","pulseaudio","network","battery","custom/power"],
 
 
         //left
@@ -81,6 +81,10 @@
             "󰂂",
             "󰁹"
             ],
+        },
+        "custom/power": {
+            "format": "⏻",
+            "on-click": "wlogout"
         },
         
 

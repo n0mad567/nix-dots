@@ -32,7 +32,7 @@ tooltip {
     background:@background;
     color: @color7;
 }
-#clock:hover, #custom-update:hover, #custom-apps:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover,#pulseaudio:hover{
+#clock:hover, #custom-update:hover, #custom-apps:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover,#pulseaudio:hover,#custom-power:hover{
     transition: all .3s ease;
     color:@color9;
 }
@@ -134,6 +134,11 @@ tooltip {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+#custom-power {
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
 }
 #group-expand{
     padding: 0px 5px;
