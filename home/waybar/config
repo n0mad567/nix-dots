@@ -2,7 +2,7 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["custom/apps","clock","tray"],
+        "modules-left": ["custom/apps","clock"], // to add app tray:  ,"tray"
         "modules-center": ["hyprland/workspaces"],
         "modules-right": ["group/expand","pulseaudio","network","battery","custom/power"],
 
@@ -15,7 +15,7 @@
             "escape": true
         },
         "clock": {
-            "format": "{:%I:%M %p} ",
+            "format": "{:%I:%M %p}",
             "interval": 1,
             "tooltip-format": "{:%A, %B %d, %Y}"
         },
