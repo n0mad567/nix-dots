@@ -13,7 +13,7 @@
 
     #system apps / deps
     kitty
-    rofi
+    wofi
     waybar
     hyprpicker
     pywal

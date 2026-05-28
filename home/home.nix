@@ -18,5 +18,5 @@
 
   xdg.configFile."kitty".source = ./kitty;
 
-  xdg.configFile."rofi".source = ./rofi;
+  xdg.configFile."wofi".source = ./wofi;
 }
