@@ -5,6 +5,7 @@
     #core utils
     git
     wget
+    tree
     vim
     blueman
     playerctl
