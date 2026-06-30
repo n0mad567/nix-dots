@@ -25,6 +25,7 @@
     
     #user apps
     discord
+    qemu
     
   ]
   ++ [

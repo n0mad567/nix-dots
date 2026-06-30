@@ -11,7 +11,7 @@
         "custom/apps": {
             "tooltip": false,
             "format": "",
-            "on-click": "wofi -show drun",
+            "on-click": "wofi --show drun",
             "escape": true
         },
         "clock": {
