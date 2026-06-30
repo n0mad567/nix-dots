@@ -38,6 +38,13 @@ hl.monitor({
 	transform = 3
 })
 
+hl.monitor({ 
+	output = "eDP-1", 
+	mode = "highrr", 
+	position = "0x0", 
+	scale = 1.2
+})
+
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -59,10 +66,11 @@ local browser     = "zen"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function () 
-   hl.exec_cmd("waybar")
    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
    hl.exec_cmd("awww-daemon")
-   hl.exec_cmd("awww img ~/.config/hypr/wallpapers/minimal-waves.jpg")
+   hl.exec_cmd("awww img ~/nixos/home/hypr/wallpapers/mountain.png")
+   hl.exec_cmd("wal -i ~/nixos/home/hypr/wallpapers/mountain.png")
+   hl.exec_cmd("waybar")
  end)
 
 hl.config({
@@ -281,7 +289,7 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + CTRL + RETURN", hl.dsp.exec_cmd("rofi -show drun"))
+hl.bind(mainMod .. " + CTRL + RETURN", hl.dsp.exec_cmd("wofi --show drun"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen(0))
 
 -- Move focus with mainMod + arrow keys
