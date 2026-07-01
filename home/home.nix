@@ -19,4 +19,15 @@
   xdg.configFile."kitty".source = ./kitty;
 
   xdg.configFile."wofi".source = ./wofi;
+
+  xdg.configFile."fastfetch".source = ./fastfetch;
+
+  programs.bash = {
+  enable = true;
+  initExtra = ''
+    if [[ -n "$KITTY_WINDOW_ID" && "$SHLVL" -eq 1 ]]; then
+      fastfetch
+    fi
+  '';
+};
 }
