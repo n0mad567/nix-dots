@@ -1,126 +1,94 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-        "type": "builtin",
+        "source": "~/Downloads/logo-new.png",
+        "type": "kitty",
         "height": null,
-        "width": null,
+        "width": 11,
         "padding": {
-            "top": 0,
-            "left": 0
+            "top": 1,
+            "right": 3,
+            "left": 2
         }
+    },
+    "display": {
+        "separator": " "
     },
     "modules": [
         {
-            "type": "custom",
-            "format": "\u001b[90m┌─────────────────Uptime / Age / DT──────────────────┐"
+            "key": "╭───────────╮",
+            "type": "custom"
+        },
+        {
+            "key": "│ {#34} user    {#keys}│",
+            "type": "title",
+            "format": "{user-name}"
+        },
+        {
+            "key": "│ {#34}󰇅 hname   {#keys}│",
+            "type": "title",
+            "format": "{host-name}"
         },
         {
             "type": "command",
-            "key": "  ›  OS Age  ",
+            "key": "│ {#34}󱦟 os age  {#keys}│",
             "keyColor": "magenta",
-            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+            "text": "printf \"\\e[0m%s days\\e[0m\" \"$(( ($(date +%s) - $(stat -c %W /)) / 86400 ))\""
         },
         {
-            "type": "uptime",
-            "key": "  ›  Uptime  ",
-            "keyColor": "magenta"
+            "key": "│ {#34}󰅐 uptime  {#keys}│",
+            "type": "uptime"
         },
         {
-            "type": "datetime",
-            "key": "  ›  DateTime  ",
-            "keyColor": "magenta"
+            "key": "│ {#34}{icon} distro  {#keys}│",
+            "type": "os"
         },
         {
-            "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
-        },
-        "break",
-        {
-            "type": "custom",
-            "format": "\u001b[90m┌──────────────────────Hardware──────────────────────┐"
+            "key": "│ {#34} kernel  {#keys}│",
+            "type": "kernel"
         },
         {
-            "type": "host",
-            "key": "󰌢  PC",
-            "keyColor": "green"
+            "key": "│ {#34} wm      {#keys}│",
+            "type": "wm"
         },
         {
+            "key": "│ {#34}󰇄 desktop {#keys}│",
+            "type": "de"
+        },
+        {
+            "key": "│ {#34} term    {#keys}│",
+            "type": "terminal"
+        },
+        {
+            "key": "│ {#34} shell   {#keys}│",
+            "type": "shell"
+        },
+        {
+            "key": "│ {#34}󰍛 cpu     {#keys}│",
             "type": "cpu",
-            "key": "│ ├󰻠 ",
-            "keyColor": "green"
+            "showPeCoreCount": true
         },
         {
-            "type": "gpu",
-            "key": "│ ├󰍹 ",
-            "keyColor": "green"
-        },
-        {
-            "type": "memory",
-            "key": "│ ├󰑭 ",
-            "keyColor": "green"
-        },
-        {
+            "key": "│ {#34}󰉉 disk    {#keys}│",
             "type": "disk",
-            "key": "└ └󰋊 ",
-            "keyColor": "green"
+            "folders": "/"
         },
         {
-            "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
-        },
-        "break",
-        {
-            "type": "custom",
-            "format": "\u001b[90m┌──────────────────────Software──────────────────────┐"
+            "key": "│ {#34} memory  {#keys}│",
+            "type": "memory"
         },
         {
-            "type": "os",
-            "key": "  OS",
-            "keyColor": "yellow"
+            "key": "├───────────┤",
+            "type": "custom"
         },
         {
-            "type": "kernel",
-            "key": "│ ├󰌽 ",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "packages",
-            "key": "│ ├󰏗 ",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "de",
-            "key": "󰧨  DE",
-            "keyColor": "blue"
-        },
-        {
-            "type": "lm",
-            "key": "│ ├󰍁 ",
-            "keyColor": "blue"
-        },
-        {
-            "type": "wm",
-            "key": "│ ├󱂬 ",
-            "keyColor": "blue"
-        },
-        {
-            "type": "wmtheme",
-            "key": "│ ├󰉦 ",
-            "keyColor": "blue"
-        },
-        {
-            "type": "terminal",
-            "key": "└ └󰆍 ",
-            "keyColor": "blue"
-        },
-        {
-            "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
-        },
-        {
+            "key": "│ {#34} colors  {#keys}│",
             "type": "colors",
-            "paddingLeft": 2,
             "symbol": "circle"
+        },
+        {
+            "key": "╰───────────╯",
+            "type": "custom"
         }
     ]
 }
