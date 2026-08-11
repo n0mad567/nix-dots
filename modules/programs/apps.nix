@@ -11,6 +11,7 @@
     playerctl
     brightnessctl
     wlogout
+    usbutils
 
     #system apps / deps
     kitty
@@ -22,10 +23,16 @@
     bibata-cursors
     nautilus
     pavucontrol
+    fastfetch
+    btop
+    unzip
+    radeontop
+    
     
     #user apps
     discord
     qemu
+    betaflight-configurator
     
   ]
   ++ [
