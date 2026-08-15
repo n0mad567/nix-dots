@@ -32,8 +32,7 @@
     #user apps
     discord
     qemu
-    betaflight-configurator
-    
+    ungoogled-chromium    
   ]
   ++ [
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
