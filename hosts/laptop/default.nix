@@ -25,10 +25,6 @@
     #../../modules/hardware/bluetooth.nix
   ];
 
-  boot.initrd.luks.devices."luks-95cdbdd6-e9e6-4f0f-a68e-567c58126278" = {
-  device = "/dev/disk/by-uuid/95cdbdd6-e9e6-4f0f-a68e-567c58126278";
-  };
-
   networking.hostName = "laptop";
 
   system.stateVersion = "25.11";

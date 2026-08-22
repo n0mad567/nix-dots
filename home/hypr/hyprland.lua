@@ -42,7 +42,7 @@ hl.monitor({
 	output = "eDP-1", 
 	mode = "highrr", 
 	position = "0x0", 
-	scale = 1.2
+	scale = 1.5
 })
 
 
@@ -68,8 +68,8 @@ local browser     = "zen"
 hl.on("hyprland.start", function () 
    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
    hl.exec_cmd("awww-daemon")
-   hl.exec_cmd("awww img ~/nixos/home/hypr/wallpapers/mountain.png")
-   hl.exec_cmd("wal -i ~/nixos/home/hypr/wallpapers/mountain.png")
+   hl.exec_cmd("awww img ~/nix-dots/home/hypr/wallpapers/mountain.png")
+   hl.exec_cmd("wal -i ~/nix-dots/home/hypr/wallpapers/mountain.png")
    hl.exec_cmd("waybar")
  end)
 
