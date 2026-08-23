@@ -26,6 +26,7 @@
     #../../modules/hardware/power.nix
     #../../modules/hardware/bluetooth.nix
   ];
+  boot.initrd.luks.devices."luks-3cc56da5-7bde-446f-9a79-6c630a4252ea".device = "/dev/disk/by-uuid/3cc56da5-7bde-446f-9a79-6c630a4252ea";
 
   networking.hostName = "laptop";
 

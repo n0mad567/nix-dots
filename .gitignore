@@ -1,2 +1,3 @@
 result
-*hardware-configuration.nix
+hosts/laptop/hardware-configuration.nix
+hosts/desktop/hardware-configuration.nix
