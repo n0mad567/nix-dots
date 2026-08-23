@@ -21,9 +21,15 @@
     ../../modules/programs/development.nix
     ../../modules/programs/gaming.nix
 
+    ../../modules/programs/laptop.nix
+
     #../../modules/hardware/power.nix
     #../../modules/hardware/bluetooth.nix
   ];
+
+  swapDevices = lib.mkForce [];
+  boot.initrd.luks.devices = lib.mkForce {};
+  boot.initrd.systemd.enable = true;
 
   networking.hostName = "laptop";
 
