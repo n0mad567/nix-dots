@@ -27,10 +27,6 @@
     #../../modules/hardware/bluetooth.nix
   ];
 
-  swapDevices = lib.mkForce [];
-  boot.initrd.luks.devices = lib.mkForce {};
-  boot.initrd.systemd.enable = true;
-
   networking.hostName = "laptop";
 
   system.stateVersion = "25.11";
