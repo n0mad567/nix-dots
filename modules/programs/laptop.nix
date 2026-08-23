@@ -9,4 +9,6 @@
   HandleLidSwitchExternalPower = "suspend";
   HandleLidSwitchDocked = "ignore";
   };
+
+  services.logind.settings.Login.HandlePowerKey = "suspend";
 }
