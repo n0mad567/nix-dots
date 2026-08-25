@@ -287,13 +287,20 @@ hl.device({
 
 local mainMod = "SUPER"
 
+
+-- Super by itself
+hl.bind(
+    mainMod .. " + SUPER_L",
+    hl.dsp.exec_cmd("wofi --show drun"),
+    { release = true }
+)
+
 -- binds, see https://wiki.hypr.land/Configuring/Binds/ for more
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + CTRL + RETURN", hl.dsp.exec_cmd("wofi --show drun"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen(0))
 
 -- Move focus with mainMod + arrow keys
