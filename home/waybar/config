@@ -10,7 +10,7 @@
         //left
         "custom/apps": {
             "tooltip": false,
-            "format": "󰆦",
+            "format": "",
             "on-click": "wofi --show drun",
             "escape": true
         },

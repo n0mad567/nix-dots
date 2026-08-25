@@ -32,7 +32,9 @@
     #user apps
     discord
     qemu
-    ungoogled-chromium    
+    ungoogled-chromium
+    onlyoffice-desktopeditors
+    
   ]
   ++ [
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
