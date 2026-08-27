@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     vscode
+    gcc
   ];
 
   programs.virt-manager.enable = true;

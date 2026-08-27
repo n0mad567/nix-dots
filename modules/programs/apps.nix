@@ -27,6 +27,7 @@
     btop
     unzip
     radeontop
+    grim
     
     
     #user apps
