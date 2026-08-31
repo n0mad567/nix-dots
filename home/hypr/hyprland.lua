@@ -290,7 +290,7 @@ local mainMod = "SUPER"
 
 
 -- binds, see https://wiki.hypr.land/Configuring/Binds/ for more
-hl.bind(mainMod .. " + CTRL", hl.dsp.exec_cmd("wofi --show drun"), { release = true })
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("wofi --show drun"), { release = true })
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
