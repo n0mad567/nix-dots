@@ -2,6 +2,7 @@
 
 set -euo pipefail
 
+
 WALLPAPER_DIR="$HOME/.config/hypr/wallpapers"
 STATE_FILE="$HOME/.cache/current-wallpaper"
 

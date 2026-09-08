@@ -1,4 +1,4 @@
-$background = rgba({background.strip}99)
+$background = rgba({background.strip}66)
 $background-solid = rgba({background.strip}ff)
 
 $foreground = rgba({foreground.strip}ff)
