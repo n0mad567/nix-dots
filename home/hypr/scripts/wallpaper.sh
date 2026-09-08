@@ -3,6 +3,7 @@
 set -euo pipefail
 
 WALLPAPER_DIR="$HOME/.config/hypr/wallpapers"
+STATE_FILE="$HOME/.cache/current-wallpaper"
 
 selected=$(
     find "$WALLPAPER_DIR" \
@@ -18,17 +19,22 @@ selected=$(
     | sort \
     | wofi \
         --show dmenu \
-        --prompt "󰸉 Wallpaper" \
-        --allow-images
+        --prompt "󰸉 Wallpaper"
 )
 
 [ -z "$selected" ] && exit 0
 
 wallpaper="$WALLPAPER_DIR/$selected"
 
+# Set wallpaper.
 awww img "$wallpaper"
 
+# Generate pywal colors.
 wal -i "$wallpaper"
 
+# Save selected wallpaper for next login.
+printf '%s\n' "$wallpaper" > "$STATE_FILE"
+
+# Reload Waybar.
 pkill waybar || true
 waybar >/dev/null 2>&1 &

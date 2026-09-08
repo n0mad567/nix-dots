@@ -65,14 +65,42 @@ local browser     = "zen"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
-hl.on("hyprland.start", function () 
-   hl.exec_cmd("hypridle")
-   hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
-   hl.exec_cmd("awww-daemon")
-   hl.exec_cmd("awww img ~/nix-dots/home/hypr/wallpapers/mountain.png")
-   hl.exec_cmd("wal -i ~/nix-dots/home/hypr/wallpapers/mountain.png")
-   hl.exec_cmd("waybar")
- end)
+hl.on("hyprland.start", function ()
+    hl.exec_cmd("hypridle")
+    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
+
+    -- Start the wallpaper daemon.
+hl.exec_cmd("awww-daemon")
+
+-- Restore the previously selected wallpaper.
+hl.exec_cmd([[
+    bash -c '
+        STATE_FILE="$HOME/.cache/current-wallpaper"
+        DEFAULT_WALLPAPER="$HOME/.config/hypr/wallpapers/mountain.png"
+
+        # Use the previously selected wallpaper if available.
+        if [ -f "$STATE_FILE" ]; then
+            WALLPAPER="$(cat "$STATE_FILE")"
+        else
+            WALLPAPER="$DEFAULT_WALLPAPER"
+        fi
+
+        # Fall back to the default wallpaper if the saved file no longer exists.
+        if [ ! -f "$WALLPAPER" ]; then
+            WALLPAPER="$DEFAULT_WALLPAPER"
+        fi
+
+        # Apply the wallpaper.
+        awww img "$WALLPAPER"
+
+        # Generate the matching pywal theme.
+        wal -i "$WALLPAPER"
+    '
+]])
+
+    -- Start Waybar after pywal generates its colors.   
+    hl.exec_cmd("waybar")
+end)
 
 hl.config({
     ecosystem = {

@@ -1,0 +1,11 @@
+$background = rgba({background.strip}99)
+$background-solid = rgba({background.strip}ff)
+
+$foreground = rgba({foreground.strip}ff)
+$foreground-dim = rgba({foreground.strip}88)
+
+$color7 = rgba({color7.strip}ff)
+$color7-dim = rgba({color7.strip}88)
+
+$color9 = rgba({color9.strip}ff)
+$color9-dim = rgba({color9.strip}66)
