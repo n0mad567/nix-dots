@@ -28,10 +28,10 @@ selected=$(
 wallpaper="$WALLPAPER_DIR/$selected"
 
 # Set wallpaper.
-awww img "$wallpaper"
+awww img "$wallpaper" --transition-type wave --transition-angle 145
 
 # Generate pywal colors.
-wal -i "$wallpaper"
+wal -i "$wallpaper" -n
 
 # Save selected wallpaper for next login.
 printf '%s\n' "$wallpaper" > "$STATE_FILE"
