@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/fletcher";
 
   imports = [
-    ./packages.nix
+    
   ];
 
   home.stateVersion = "25.11";

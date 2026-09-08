@@ -12,6 +12,7 @@
     brightnessctl
     wlogout
     hyprlock
+    hypridle
     usbutils
 
     #system apps / deps
