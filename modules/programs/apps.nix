@@ -11,6 +11,7 @@
     playerctl
     brightnessctl
     wlogout
+    hyprlock
     usbutils
 
     #system apps / deps

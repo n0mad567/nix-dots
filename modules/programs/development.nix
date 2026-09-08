@@ -2,9 +2,11 @@
 
 {
   environment.systemPackages = with pkgs; [
+    python3
+    uv
+    gcc
     vscode
     neovim
-    gcc
   ];
 
   programs.virt-manager.enable = true;

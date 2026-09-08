@@ -22,6 +22,8 @@
 
   xdg.configFile."fastfetch".source = ./fastfetch;
 
+  xdg.configFile."wlogout".source = ./wlogout;
+
   programs.bash = {
   enable = true;
   initExtra = ''
