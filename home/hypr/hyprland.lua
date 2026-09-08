@@ -66,6 +66,7 @@ local browser     = "zen"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function () 
+   hl.exec_cmd("hypridle")
    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
    hl.exec_cmd("awww-daemon")
    hl.exec_cmd("awww img ~/nix-dots/home/hypr/wallpapers/mountain.png")
@@ -291,6 +292,7 @@ local mainMod = "SUPER"
 
 -- binds, see https://wiki.hypr.land/Configuring/Binds/ for more
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("wofi --show drun"), { release = true })
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper.sh"))
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
