@@ -20,7 +20,7 @@ selected=$(
     | sort \
     | wofi \
         --show dmenu \
-        --prompt "󰸉 Wallpaper"
+        --prompt "Wallpaper"
 )
 
 [ -z "$selected" ] && exit 0
