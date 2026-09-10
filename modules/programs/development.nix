@@ -7,6 +7,7 @@
     gcc
     vscode
     neovim
+    arduino-ide
   ];
 
   programs.virt-manager.enable = true;
