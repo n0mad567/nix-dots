@@ -1,3 +1,4 @@
+
 @import url('/home/fletcher/.cache/wal/colors-waybar.css');
 
 @define-color mauve @color9;
@@ -6,65 +7,58 @@
 @define-color text @color7;
 
 * {
+    all:unset;
     font-family: 'CodeNewRoman Nerd Font Mono', monospace;
     font-size: 18px;
     outline: none;
     border: none;
-    text-shadow: none;
+    text-shadow:none;
+    background-color:transparent;
 }
 
 window {
     padding: 12px;
     border-radius: 10px;
-    background-color: alpha(@*background*, 0.90);
+    background-color: alpha(@background,.7);
 }
 
 #outer-box {
-    padding: 4px;
-}
-
-#input {
-    margin: 8px 12px;
-    padding: 12px;
-    color: @text;
-    background-color: alpha(@*background*, 0.2);
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    border: none;
 }
 
 #inner-box {
-    padding: 0;
     margin: 2px;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
 }
 
 #scroll {
-    padding: 0;
     margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
 }
 
 #entry {
     min-height: 30px;
-    margin: 3px;
-    padding: 8px;
-    border-radius: 12px;
+    margin: 5px;
+    padding: 10px;
+    border: none;
     background-color: transparent;
 }
 
-#entry arrow {
-    color: @lavender;
+#entry:selected {
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.03);
 }
 
-#entry:selected {
-    background-color: alpha(@color9, 0.12);
-    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
+#text {
+    margin: 5px;
+    color: @text;
 }
 
 #entry:selected #text {
     color: @mauve;
-}
-
-#text {
-    margin: 4px;
-    color: @text;
 }
