@@ -327,6 +327,8 @@ hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen(0))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("mkdir -p ~/Photos/Screenshots && grim -g \"$(slurp)\" - | tee >(wl-copy --type image/png) > ~/Photos/Screenshots/$(date +%Y%m%d_%H%M%S).png"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("mkdir -p ~/Photos/Screenshots && f=\"$HOME/Photos/Screenshots/$(date +%Y%m%d_%H%M%S).png\" && grim -g \"$(slurp)\" - | swappy -f - -o \"$f\" && wl-copy --type image/png < \"$f\""))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
@@ -362,8 +364,8 @@ hl.bind(mainMod .. " + Tab", hl.dsp.focus({ workspace = "m+1" }))
 hl.bind(mainMod .. " + SHIFT + Tab", hl.dsp.focus({ workspace = "m-1" }))
 
 -- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+--hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
+--hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

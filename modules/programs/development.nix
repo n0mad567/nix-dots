@@ -8,6 +8,8 @@
     vscode
     neovim
     arduino-ide
+    gnumake
+    cmake
   ];
 
   programs.virt-manager.enable = true;

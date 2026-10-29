@@ -1,6 +1,7 @@
 { pkgs, inputs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     #core utils
     git
@@ -14,6 +15,10 @@
     hyprlock
     hypridle
     usbutils
+    tmux
+    lsof
+    file
+    
 
     #system apps / deps
     kitty
@@ -29,7 +34,11 @@
     btop
     unzip
     radeontop
+
+    slurp
+    swappy
     grim
+    wl-clipboard
     
     
     #user apps
@@ -37,7 +46,15 @@
     qemu
     ungoogled-chromium
     onlyoffice-desktopeditors
+
+    rpi-imager
+    mediainfo
     
+
+    #local AI
+    llama-cpp-vulkan
+    vulkan-tools
+    mesa
   ]
   ++ [
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
