@@ -317,9 +317,82 @@ hl.device({
 local mainMod = "SUPER"
 
 
+-- Toggle Wofi when Left Super is tapped alone for less than 1 second.
+-- XKB keycodes: Left Super = 133, Right Super = 134.
+
+local super_key = 133
+local held_keys = {}
+local tracking = false
+local cancelled = false
+local too_long = false
+local press_timer = nil
+
+local function toggle_wofi()
+    hl.dispatch(hl.dsp.exec_cmd(
+        "if pgrep -x .wofi-wrapped >/dev/null; then pkill -x .wofi-wrapped; else wofi --show drun; fi"
+    ))
+end
+
+hl.on("input.keyboard.key", function(keycode, timestamp, state)
+    -- Ignore key repeats.
+    if state == 2 then
+        return
+    end
+
+    if state == 1 then
+        -- A key pressed while Super is being held cancels the tap.
+        if tracking and keycode ~= super_key then
+            cancelled = true
+        end
+
+        if keycode == super_key then
+            local another_key_held = false
+
+            for key in pairs(held_keys) do
+                if key ~= super_key then
+                    another_key_held = true
+                    break
+                end
+            end
+
+            if not another_key_held then
+                tracking = true
+                cancelled = false
+                too_long = false
+
+                press_timer = hl.timer(function()
+                    too_long = true
+                end, {
+                    timeout = 1000,
+                    type = "oneshot"
+                })
+            else
+                tracking = false
+            end
+        end
+
+        held_keys[keycode] = true
+
+    elseif state == 0 then
+        if keycode == super_key and tracking then
+            if press_timer then
+                press_timer:set_enabled(false)
+            end
+
+            if not cancelled and not too_long then
+                toggle_wofi()
+            end
+
+            tracking = false
+            press_timer = nil
+        end
+
+        held_keys[keycode] = nil
+    end
+end)
+
 
 -- binds, see https://wiki.hypr.land/Configuring/Binds/ for more
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("wofi --show drun"), { release = true })
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper.sh"))
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))

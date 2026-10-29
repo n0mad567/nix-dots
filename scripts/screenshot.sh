@@ -23,8 +23,8 @@ choice="$(
             --hide-search \
             --prompt 'Screenshot' \
             --width 300 \
-            --height 160 \
             --lines 2 \
+            --define dynamic_lines=true \
             --style "$HOME/.config/wofi/screenshot.css"
 )" || exit 0
 

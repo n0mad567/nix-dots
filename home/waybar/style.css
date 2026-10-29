@@ -32,7 +32,7 @@ tooltip {
     background:@background;
     color: @color7;
 }
-#clock:hover, #custom-update:hover, #custom-apps:hover,#screenshot:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover,#pulseaudio:hover,#custom-power:hover{
+#clock:hover, #custom-update:hover, #custom-apps:hover,#custom-screenshot:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover,#pulseaudio:hover,#custom-power:hover{
     transition: all .3s ease;
     color:@color9;
 }

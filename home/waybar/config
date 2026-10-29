@@ -105,7 +105,7 @@
                 "transition-to-left": true,
                 "click-to-reveal": true
             },
-            "modules": ["custom/expand","custom/colorpicker","screenshot","bluetooth","custom/update","custom/endpoint"],
+            "modules": ["custom/expand","custom/colorpicker","custom/screenshot","bluetooth","custom/update","custom/endpoint"],
         },
         "custom/colorpicker": {
             "format": "{}",
@@ -115,8 +115,8 @@
             "on-click": "~/.config/waybar/scripts/colorpicker.sh",
             "signal": 1
         },
-        "screenshot": {
-            "format": "󰩭",
+        "custom/screenshot": {
+            "format": " 󰩭 ",
             "on-click": "~/nix-dots/scripts/screenshot.sh",
             "tooltip": false
         },  
