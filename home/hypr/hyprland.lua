@@ -363,7 +363,7 @@ hl.on("input.keyboard.key", function(keycode, timestamp, state)
                 press_timer = hl.timer(function()
                     too_long = true
                 end, {
-                    timeout = 1000,
+                    timeout = 500,
                     type = "oneshot"
                 })
             else
@@ -393,6 +393,7 @@ end)
 
 
 -- binds, see https://wiki.hypr.land/Configuring/Binds/ for more
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("wofi --show drun"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper.sh"))
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))

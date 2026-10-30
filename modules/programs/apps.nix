@@ -40,16 +40,11 @@
     grim
     wl-clipboard
     
-    
     #user apps
     discord
     qemu
     ungoogled-chromium
     onlyoffice-desktopeditors
-
-    rpi-imager
-    mediainfo
-    
 
     #local AI
     llama-cpp-vulkan
