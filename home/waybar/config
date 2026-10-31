@@ -4,7 +4,7 @@
         "reload_style_on_change": true,
         "modules-left": ["custom/apps","clock"], // to add app tray:  ,"tray"
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["group/expand","pulseaudio","network","battery","custom/power"],
+        "modules-right": ["group/expand","pulseaudio","network","battery","group/power"],
 
 
         //left
@@ -82,11 +82,45 @@
             "󰁹"
             ],
         },
+        "group/power": {
+            "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 350,
+                "transition-left-to-right": true,
+                "children-class": "power-child",
+                "reveal-delay": 100
+            },
+            "modules": [
+                "custom/power",
+                "custom/reboot",
+                "custom/suspend",
+                "custom/lock"
+            ]
+        },
+
         "custom/power": {
             "format": "⏻",
-            "on-click": "wlogout"
+            "tooltip": false
         },
-        
+
+        "custom/reboot": {
+            "format": "",
+            "tooltip": false,
+            "on-click": "systemctl reboot"
+        },
+
+        "custom/suspend": {
+            "format": "",
+            "tooltip": false,
+            "on-click": "systemctl suspend"
+        },
+
+        "custom/lock": {
+            "format": "",
+            "tooltip": false,
+            "on-click": "hyprlock"
+        },
+
 
 
         //expander
@@ -103,7 +137,6 @@
             "drawer": {
                 "transition-duration": 600,
                 "transition-to-left": true,
-                "click-to-reveal": true
             },
             "modules": ["custom/expand","custom/colorpicker","custom/screenshot","bluetooth","custom/update","custom/endpoint"],
         },
