@@ -34,6 +34,7 @@ awww img "$wallpaper" --transition-type wave --transition-angle 145
 wal -i "$wallpaper" -n
 
 # Save selected wallpaper for next login.
+cp -f "$wallpaper" "$STATE_FILE.image"
 printf '%s\n' "$wallpaper" > "$STATE_FILE"
 
 # Reload Waybar.
