@@ -11,7 +11,6 @@
     blueman
     playerctl
     brightnessctl
-    wlogout
     hyprlock
     hypridle
     usbutils

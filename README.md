@@ -39,7 +39,6 @@ This repository contains my personal NixOS configuration.
 | Kitty     | Terminal                                  |
 | Pywal     | Dynamic color generation                  |
 | Awww      | Wallpaper daemon                          |
-| Wlogout   | Logout/power menu                         |
 | Fastfetch | System information                        |
 
 ---

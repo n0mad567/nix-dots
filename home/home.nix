@@ -22,8 +22,6 @@
 
   xdg.configFile."fastfetch".source = ./fastfetch;
 
-  xdg.configFile."wlogout".source = ./wlogout;
-
   xdg.configFile."wal/templates/hyprlock-colors.conf".source = ./hypr/hyprlock-colors.conf.template;
 
   programs.bash = {
