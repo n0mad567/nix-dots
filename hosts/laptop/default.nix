@@ -30,15 +30,5 @@
 
   networking.hostName = "laptop";
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      onlyoffice-desktopeditors =
-        prev.onlyoffice-desktopeditors.override {
-          gtk2 = final.gtk3;
-        };
-    })
-  ];
-
-  
   system.stateVersion = "25.11";
 }

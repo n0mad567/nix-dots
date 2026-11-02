@@ -6,20 +6,20 @@ HOST="$(hostname)"
 
 cd "$FLAKE"
 
-echo "Saving current configuration to git..."
+echo "saving current configuration to git..."
 git add .
 git commit -m "Before flake update $(date +%F)" || true
 
-echo "Updating flake inputs..."
+echo "updating flake inputs..."
 nix flake update
 
-echo "Checking configuration..."
+echo "checking configuration..."
 nix flake check --no-build
 
-echo "Building updated system..."
+echo "building updated system..."
 sudo nixos-rebuild build --flake "$FLAKE#$HOST"
 
-echo "Switching to updated system..."
+echo "switching to updated system..."
 sudo nixos-rebuild switch --flake "$FLAKE#$HOST"
 
-echo "Update successful."
+echo "update successful."
