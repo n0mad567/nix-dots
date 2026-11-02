@@ -167,7 +167,7 @@
         }, 
         "custom/update": {
             "format": " ",
-            "on-click": "kitty sh -c 'bash ~/nix-dots/scripts/rebuild.sh; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+            "on-click": "kitty sh -c 'bash ~/nix-dots/scripts/update.sh; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
             "signal": 8,
             "tooltip": false,
         },
