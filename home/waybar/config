@@ -138,7 +138,7 @@
                 "transition-duration": 600,
                 "transition-to-left": true,
             },
-            "modules": ["custom/expand","custom/colorpicker","custom/screenshot","bluetooth","custom/update","custom/endpoint"],
+            "modules": ["custom/expand","custom/colorpicker","custom/screenshot","bluetooth","custom/rebuild","custom/update","custom/endpoint"],
         },
         "custom/colorpicker": {
             "format": "{}",
@@ -165,6 +165,12 @@
             "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
             "on-click-right": "blueman-manager",
         }, 
+        "custom/rebuild": {
+            "format": " ",
+            "on-click": "kitty sh -c 'bash ~/nix-dots/scripts/rebuild.sh; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+            "signal": 8,
+            "tooltip": false,
+        },
         "custom/update": {
             "format": " ",
             "on-click": "kitty sh -c 'bash ~/nix-dots/scripts/update.sh; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
