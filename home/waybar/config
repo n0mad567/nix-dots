@@ -30,7 +30,8 @@
             },
             "persistent-workspaces": {
                 "*": [ 1,2,3,4,5 ]
-            }
+            },
+            "on-click": "activate"
         },
 
         //right
@@ -38,8 +39,6 @@
             // "scroll-step": 1, // %, can be a float
             "format": "{volume}% {icon}",
             "format-bluetooth": "{volume}% {icon}",
-            //"format-bluetooth-muted": " {icon}",
-            //"format-muted": " {format_source}",
             "format-source": "{volume}% ",
             "format-source-muted": "",
             "format-icons": {
@@ -71,7 +70,7 @@
             },
             "format": "{capacity}% {icon}",
             "format-charging": "{capacity}% 󰂄",
-            "format-plugged": "{capacity}% 󰂄 ",
+            "format-plugged": "{capacity}% 󰂄",
             "format-alt": "{time} {icon}",
             "format-icons": [
                 "󰁻",
@@ -138,7 +137,7 @@
                 "transition-duration": 600,
                 "transition-to-left": true,
             },
-            "modules": ["custom/expand","custom/colorpicker","custom/screenshot","bluetooth","custom/rebuild","custom/update","custom/endpoint"],
+            "modules": ["custom/expand","custom/colorpicker","custom/screenshot","bluetooth","custom/update","custom/endpoint"],
         },
         "custom/colorpicker": {
             "format": "{}",
@@ -149,7 +148,7 @@
             "signal": 1
         },
         "custom/screenshot": {
-            "format": " 󰩭 ",
+            "format": "󰩭",
             "on-click": "~/nix-dots/scripts/screenshot.sh",
             "tooltip": false
         },  
@@ -165,12 +164,6 @@
             "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
             "on-click-right": "blueman-manager",
         }, 
-        "custom/rebuild": {
-            "format": " ",
-            "on-click": "kitty sh -c 'bash ~/nix-dots/scripts/rebuild.sh; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
-            "signal": 8,
-            "tooltip": false,
-        },
         "custom/update": {
             "format": " ",
             "on-click": "kitty sh -c 'bash ~/nix-dots/scripts/update.sh; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",

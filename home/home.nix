@@ -37,5 +37,30 @@
     source = ./hypr/scripts/wallpaper.sh;
     executable = true;
   };
+
+  home.packages = with pkgs; [
+    #home
+    git
+    vim
+    blueman
+    playerctl
+    brightnessctl
+    hyprlock
+    hypridle
+    kitty
+    wofi
+    waybar
+    hyprpicker
+    pywal
+    awww
+    bibata-cursors
+    nautilus
+    pavucontrol
+    fastfetch
+    slurp
+    swappy
+    grim
+    wl-clipboard
+  ];
   
 }

@@ -4,41 +4,15 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     #core utils
-    git
     wget
     tree
-    vim
-    blueman
-    playerctl
-    brightnessctl
-    hyprlock
-    hypridle
+    btop
     usbutils
     tmux
     lsof
     file
-    
-
-    #system apps / deps
-    kitty
-    wofi
-    waybar
-    hyprpicker
-    pywal
-    awww
-    bibata-cursors
-    nautilus
-    pavucontrol
-    fastfetch
-    btop
     unzip
-    radeontop
 
-    slurp
-    swappy
-    grim
-    wl-clipboard
-    
     #user apps
     discord
     qemu

@@ -32,7 +32,7 @@ tooltip {
     background:@background;
     color: @color7;
 }
-#clock:hover, #custom-update:hover, #custom-rebuild:hover, 
+#clock:hover, #custom-update:hover,
 #custom-apps:hover,#custom-screenshot:hover,
 #bluetooth:hover,#network:hover,#battery:hover, 
 #cpu:hover,#memory:hover,#temperature:hover,
@@ -52,7 +52,7 @@ tooltip {
     color:@color7;
     transition: all .3s ease;
 }
-#custom-update{
+#custom-update, #custom-screenshot{
     padding: 0px 5px;
     transition: all .3s ease;
     color:@color7;
@@ -147,8 +147,8 @@ tooltip {
 }
 /* Power menu bubble */
 #power {
-    padding: 1px 1px;
-    margin: 0px 0px;
+    padding: 1px 0px;
+    margin: 0px 2px;
     border-radius: 8px;
     background: alpha(@foreground,.08);
     transition: all .3s ease;
