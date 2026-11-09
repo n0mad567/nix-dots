@@ -10,9 +10,13 @@
     arduino-ide
     gnumake
     cmake
+    openssl
   ];
 
   programs.virt-manager.enable = true;
   virtualisation.libvirtd.enable = true;
+
+  virtualisation.docker.enable = true;
+
 
 }
