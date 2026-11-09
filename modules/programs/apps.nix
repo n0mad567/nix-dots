@@ -19,6 +19,9 @@
     ungoogled-chromium
     onlyoffice-desktopeditors
 
+    #sync
+    syncthing
+
     #local AI
     llama-cpp-vulkan
     vulkan-tools
