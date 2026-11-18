@@ -100,7 +100,7 @@
         "custom/power": {
             "format": "⏻",
             "tooltip": false,
-            "on-click": "poweroff"
+            "on-click": "poweroff" 
         },
 
         "custom/reboot": {
