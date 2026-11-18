@@ -6,4 +6,5 @@
   gamescope
 ];
   programs.steam.enable = true;
+  hardware.uinput.enable = true;
 }
