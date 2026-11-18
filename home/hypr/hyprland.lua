@@ -19,6 +19,8 @@ hl.monitor({
 	output = "DP-1", 
 	mode = "highrr", 
 	position = "0x0", 
+    cm = "srgb",
+    supports_hdr = -1,
 	scale = 1
 })
 
@@ -27,6 +29,8 @@ hl.monitor({
 	mode = "preferred", 
 	position = "auto-left", 
 	scale = 1, 
+    cm = "srgb",
+    supports_hdr = -1,
 	transform = 1
 })
 
@@ -35,14 +39,25 @@ hl.monitor({
 	mode = "preferred", 
 	position = "auto-right", 
 	scale = 1,
+    cm = "srgb",
+    supports_hdr = -1,
 	transform = 3
 })
 
 hl.monitor({ 
-	output = "eDP-1", 
+	output = "eDP-1",
+    cm = "srgb",
+    supports_hdr = -1,
 	mode = "highrr", 
 	position = "0x0", 
 	scale = 1.5
+})
+
+--disable hdr grey screen
+hl.config({
+    render = {
+        cm_auto_hdr = 0,
+    },
 })
 
 
